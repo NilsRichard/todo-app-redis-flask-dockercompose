@@ -16,7 +16,6 @@ def home():
 
 @app.route('/todo-list', methods=['GET', 'POST'])
 def todolist():
-    sys.stdout.flush()
     form = TodoAddForm()
     formRm = TodoRemoveForm()
     if form.validate_on_submit():
