@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title> Hello ! </title>
+  </head>
+  <body class="w3-center">
+    <header class="w3-container w3-teal">
+        <h1>Todo List</h1>
+    </header>
+    <div class="w3-container w3-margin w3-center">
+      <form class="w3-container w3-bar" action="" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.label(class="w3-bar-item w3-margin w3-input w3-border w3-round", onfocus="this.value=''", placeholder="type a thing to do...") }}
+        {{ form.submit(class="w3-bar-item w3-margin w3-button w3-block w3-green")}}
+      </form>
+    </div>
+    <ul class="w3-ul w3-margin w3-border">
+      {% for todo in todos %}
+      <li class="w3-display-container"> {{ todo.decode('utf-8') }}
+        <form class="" action="" method="post">
+          {{ formRm.hidden_tag() }}
+          {{ formRm.value(type="hidden", value=todo.decode('utf-8')) }}
+          {{ formRm.submit(class="w3-button w3-display-right")}}
+        </form>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
